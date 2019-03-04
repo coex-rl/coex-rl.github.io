@@ -1,0 +1,178 @@
+.container {
+  max-width: 1100px;
+}
+
+/* override default style */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bitter" !important;
+}
+body {
+  font-family: "Source Serif Pro", "Lora", "Bitter", "Helvetica";
+  font-size: 1.8em;
+}
+p {
+  margin-bottom: 1.0rem;
+}
+
+/* Shared Elements
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+img.diagram {
+  width: 80%;
+  margin-bottom: 3.0rem;
+}
+
+@media (max-width: 700px) {
+  img.diagram {
+    width: 100%;
+  }
+}
+
+i.icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Basic Style: Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+  padding: 8rem 0 7rem;
+  text-align: center;
+}
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
+
+.section p {
+  text-align: left;
+}
+
+p.left { text-align: left; }
+p.right { text-align: right; }
+p.justify { text-align: justify; }
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section.header {
+  /*background-color: #a3daff;*/
+  background-image: linear-gradient(#72c3fc, #ccedff);
+}
+section.header h1 {
+  font-size: 6rem;
+}
+@media (max-width: 700px) {
+  section.header h1 {
+    font-size: 4rem;
+  }
+}
+/*section.header h4.venue {
+  margin-top: 5rem;
+}*/
+
+/* authors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+section.authors {
+  background-image: url('../images/values-bg.jpg');
+  /*background-color: #ced4da;*/
+  background-size: cover;
+  /*color: #fff;*/
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+.authors .row {
+  padding: 1.5rem 0 0.5rem;
+}
+.author-name {
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+}
+.author-name, .author-name a {
+  color: #1862ab;
+}
+.author-name a:hover {
+  color: #1c7cd6;
+}
+.author-affiliation {
+  font-size: 2.0rem;
+  margin-bottom: .3rem;
+}
+@media (max-width: 700px) {
+  .author-affiliation {
+    display: none;
+  }
+}
+
+/* anchors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section.anchors {
+  padding: 3rem 0 2rem;
+  background-color: #f1f1f1;
+}
+section.anchors i.faicon:before {
+  font-size: 4rem;
+}
+section.anchors i.faicon span {
+  font-family: "Bitter";
+  margin-top: 5px;
+  display: inline-block;
+  line-height: 1.0;
+}
+section.anchors a {
+  color: black;
+}
+section.anchors a:hover {
+  color: #1862ab;
+}
+@media (max-width: 700px) {
+  /* force grid layout for the icons */
+  .anchors .two.columns {
+    width: 33%;
+  }
+}
+
+/* videos
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section.videos h5 {
+  margin-bottom: 1rem;
+  text-align: left;
+  color: #1862ab;
+}
+
+.videos .row {
+  margin-bottom: 2rem;
+}
+
+
+
+/* Bigger than 550 */
+@media (min-width: 550px) {
+  /*.section {*/
+    /*padding: 12rem 0 11rem;*/
+  /*}*/
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+  .section-description {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .categories {
+    padding: 15rem 0 8rem;
+  }
+}
+
+/* Bigger than 1000 */
+@media (min-width: 1000px) {
+  /*.section {*/
+    /*padding: 20rem 0 19rem;*/
+  /*}*/
+}

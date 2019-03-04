@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Contingency-Aware Exploration in Reinforcement Learning</title>
+  <meta name="description" content="Contingency-Aware Exploration in Reinforcement Learning (ICLR 2019)">
+  <meta name="author" content="Choi, Guo, Moczulski et al.">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Bitter%3A400%2C600%2C700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lora%3A400%2C600%2C700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Source%20Serif%20Pro%3A400%2C600%2C700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./skeleton.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <section class="section header">
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <h1>Contingency-Aware Exploration in Reinforcement Learning</h1>
+          <!--<h4 class="venue">In ICLR 2019</h4>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section authors">
+    <div class="container">
+      <div class="row">
+        <div class="one columns">&nbsp;</div>
+        <div class="three columns">
+          <h3 class="author-name"><a href="https://wook.kr" target="_blank">Jongwook Choi*</a></h3>
+          <h5 class="author-affiliation">University of Michigan</h5>
+        </div>
+        <div class="four columns">
+          <h3 class="author-name">Yijie Guo*</h3>
+          <h5 class="author-affiliation">University of Michigan</h5>
+        </div>
+        <div class="three columns">
+          <h3 class="author-name">Marcin Moczulski*</h3>
+          <h5 class="author-affiliation">Google Brain</h5>
+        </div>
+        <div class="one columns">&nbsp;</div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <h3 class="author-name"><a href="https://sites.google.com/a/umich.edu/junhyuk-oh/" target="_blank">Junhyuk Oh</a></h3>
+          <h5 class="author-affiliation">DeepMind</h5>
+        </div>
+        <div class="three columns">
+          <h3 class="author-name">Neal Wu</h3>
+          <h5 class="author-affiliation">Google Brain</h5>
+        </div>
+        <div class="three columns">
+          <h3 class="author-name"><a href="https://norouzi.github.io/" target="_blank">Mohammad Norouzi</a></h3>
+          <h5 class="author-affiliation">Google Brain</h5>
+        </div>
+        <div class="three columns value">
+          <h3 class="author-name"><a href="https://web.eecs.umich.edu/~honglak/" target="_blank">Honglak Lee</a></h3>
+          <h5 class="author-affiliation">Google Brain<br/>University of Michigan</h5>
+        </div>
+      </div>
+      <div class="row">
+        <h6>
+          * Equal Contributions
+        </h6>
+        <h5>
+          In ICLR 2019
+        </h5>
+      </div>
+    </div>
+  </section>
+
+  <section class="section anchors">
+    <div class="container">
+      <div class="row">
+        <div class="three columns">&nbsp;</div>
+        <div class="two columns">
+          <a href="https://arxiv.org/abs/1811.01483" target="_blank">
+            <i class="faicon far fa-file-alt">
+              <br><span>Paper (arXiv)</span>
+            </i>
+          </a>
+        </div>
+        <div class="two columns">
+          <a href="https://github.com/coex-rl/ppo-coex" target="_blank">
+            <i class="faicon fab fa-github">
+              <br><span>Code <br /><small>(coming soon!)</small></span>
+            </i>
+          </a>
+        </div>
+        <div class="two columns">
+          <a href="https://drive.google.com/file/d/1ob2MKIkj0Eg-CYptL_xZoj3Im5-bwOkK/view" target="_blank">
+            <i class="faicon far fa-comment-alt">
+              <br><span>Talk <br /><small>(NeurIPS 2018)</small></span>
+            </i>
+          </a>
+        </div>
+        <div class="three columns">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Overview</h2>
+
+      <img src="./ADM-diagram.png" class="diagram" />
+
+      <p class="justify">
+        We investigate whether learning contingency-awareness and controllable aspects of an environment can lead to efficient exploration in reinforcement learning.
+        We develop an <strong>attentive dynamics model (ADM)</strong> that discovers controllable elements of the observations,
+        which can be trained in a self-supervised fashion using the agent's experience.
+      </p>
+      <p class="justify">
+        We combine an actor-critic algorithm with count-based exploration using the discovered contingent regions,
+        achieving strong results in sparse-reward Atari games:
+        for example, we report a state-of-the-art score of &gt;11,000 points on <strong>Montezuma's Revenge</strong>
+        without using expert demonstrations, explicit high-level information (e.g., RAM states), or resetting to arbitrary states.
+      </p>
+    </div>
+  </section>
+
+
+  <section class="section videos">
+    <div class="container">
+      <h2>Demo Video</h2>
+      <p class="left">
+        As a supplementary material, we show examples of the agent playing eight hard-exploration Atari Games and the discovered contingent regions.
+      </p>
+      <p>&nbsp;</p>
+
+      <div class="row">
+        <div class="one-half column">
+          <h5>Montezuma's Revenge</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/yy6uxjHOHYE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="one-half column">
+          <h5>Seaquest</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/fEuJ2rc0xD4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column">
+          <h5>Frostbite</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/XBKaUiBxg5w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="one-half column">
+          <h5>PrivateEye</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/BRg_Pk_30VA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column">
+          <h5>Qbert</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/vQWuSUXn-8g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="one-half column">
+          <h5>Venture</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/Dwi1oH0z_zM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column">
+          <h5>Freeway</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/fY4tBUF8_jk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="one-half column">
+          <h5>Hero</h5>
+          <iframe width="100%" height="300px" src="https://www.youtube-nocookie.com/embed/TVfQnxfqvDo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+  <section class="section">
+    <div class="container">
+      <h2>Citation</h2>
+      <p>
+        Jongwook Choi*, Yijie Guo*, Marcin Moczulski*, Junhyuk Oh, Neal Wu, Mohammad Norouzi, and Honglak Lee.
+        Contingency-Aware Exploration in Reinforcement Learning. In ICLR, 2019.
+      </p>
+    </div>
+  </section>
+  -->
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
